@@ -1,28 +1,41 @@
 import { useState } from 'react'
 
+export function add(a: number, b: number): number {
+  return a + b
+}
+
+export function subtract(a: number, b: number): number {
+  return a - b
+}
+
+export function multiply(a: number, b: number): number {
+  return a * b
+}
+
+export function divide(a: number, b: number): number | string {
+  if (b === 0) return 'Error'
+  return a / b
+}
+
 function App() {
   const [num1, setNum1] = useState('')
   const [num2, setNum2] = useState('')
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState<number | string>('')
 
-  const add = () => {
-    setResult(String(Number(num1) + Number(num2)))
+  const handleAdd = () => {
+    setResult(add(Number(num1), Number(num2)))
   }
 
-  const subtract = () => {
-    setResult(String(Number(num1) - Number(num2)))
+  const handleSubtract = () => {
+    setResult(subtract(Number(num1), Number(num2)))
   }
 
-  const multiply = () => {
-    setResult(String(Number(num1) * Number(num2)))
+  const handleMultiply = () => {
+    setResult(multiply(Number(num1), Number(num2)))
   }
 
-  const divide = () => {
-    if (Number(num2) === 0) {
-      setResult('Cannot divide by zero')
-    } else {
-      setResult(String(Number(num1) / Number(num2)))
-    }
+  const handleDivide = () => {
+    setResult(divide(Number(num1), Number(num2)))
   }
 
   const clear = () => {
@@ -55,39 +68,21 @@ function App() {
         />
 
         <div className="grid grid-cols-2 gap-2">
-          <button
-            onClick={add}
-            className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-          >
+          <button onClick={handleAdd} className="bg-blue-500 text-white py-2 rounded">
             Add
           </button>
-
-          <button
-            onClick={subtract}
-            className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-          >
+          <button onClick={handleSubtract} className="bg-blue-500 text-white py-2 rounded">
             Subtract
           </button>
-
-          <button
-            onClick={multiply}
-            className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-          >
+          <button onClick={handleMultiply} className="bg-blue-500 text-white py-2 rounded">
             Multiply
           </button>
-
-          <button
-            onClick={divide}
-            className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-          >
+          <button onClick={handleDivide} className="bg-blue-500 text-white py-2 rounded">
             Divide
           </button>
         </div>
 
-        <button
-          onClick={clear}
-          className="w-full mt-3 bg-gray-500 text-white py-2 rounded hover:bg-gray-600"
-        >
+        <button onClick={clear} className="w-full mt-3 bg-gray-500 text-white py-2 rounded">
           Clear
         </button>
 
