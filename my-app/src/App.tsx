@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 
 function App() {
   const [num1, setNum1] = useState('')
@@ -33,35 +32,69 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <h1>Calculator App</h1>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="w-80 bg-white p-6 rounded-lg shadow-md">
+        <h1 className="text-2xl font-bold text-blue-600 text-center mb-4">
+          Calculator App
+        </h1>
 
-      <input
-        type="number"
-        placeholder="Enter first number"
-        value={num1}
-        onChange={(e) => setNum1(e.target.value)}
-      />
+        <input
+          type="number"
+          placeholder="Enter first number"
+          value={num1}
+          onChange={(e) => setNum1(e.target.value)}
+          className="w-full p-2 mb-3 border border-gray-300 rounded"
+        />
 
-      <input
-        type="number"
-        placeholder="Enter second number"
-        value={num2}
-        onChange={(e) => setNum2(e.target.value)}
-      />
+        <input
+          type="number"
+          placeholder="Enter second number"
+          value={num2}
+          onChange={(e) => setNum2(e.target.value)}
+          className="w-full p-2 mb-4 border border-gray-300 rounded"
+        />
 
-      <div className="buttons">
-        <button onClick={add}>Add</button>
-        <button onClick={subtract}>Subtract</button>
-        <button onClick={multiply}>Multiply</button>
-        <button onClick={divide}>Divide</button>
+        <div className="grid grid-cols-2 gap-2">
+          <button
+            onClick={add}
+            className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Add
+          </button>
+
+          <button
+            onClick={subtract}
+            className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Subtract
+          </button>
+
+          <button
+            onClick={multiply}
+            className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Multiply
+          </button>
+
+          <button
+            onClick={divide}
+            className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Divide
+          </button>
+        </div>
+
+        <button
+          onClick={clear}
+          className="w-full mt-3 bg-gray-500 text-white py-2 rounded hover:bg-gray-600"
+        >
+          Clear
+        </button>
+
+        <h2 className="text-green-600 font-semibold text-center mt-4">
+          Result: {result}
+        </h2>
       </div>
-
-      <button className="clear-btn" onClick={clear}>
-        Clear
-      </button>
-
-      <h2>Result: {result}</h2>
     </div>
   )
 }
