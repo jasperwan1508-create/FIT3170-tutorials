@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Google credentials (VERY IMPORTANT)
+Tutorial 3/google-vision/credentials/
+
+# Optional: OS junk
+.DS_Store
+Thumbs.db
