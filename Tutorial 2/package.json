@@ -7,6 +7,7 @@
   "name": "fit3170-tutorials",
   "description": "Tutorials for FIT3170",
   "version": "1.0.0",
+  "type": "module",
   "main": "app.js",
   "dependencies": {
     "@techstark/opencv-js": "^4.12.0-release.1",
@@ -43,6 +44,7 @@
     "std-env": "^4.0.0",
     "tailwindcss": "^4.2.2",
     "tapable": "^2.3.2",
+    "tesseract.js": "^7.0.0",
     "tinybench": "^2.9.0",
     "tinyexec": "^1.0.4",
     "tinyglobby": "^0.2.15",
