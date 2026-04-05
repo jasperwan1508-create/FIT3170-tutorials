@@ -1,0 +1,1 @@
+{"version":3,"sources":["meteor://💻app/app/client/main.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,uBAAuB;AACzB","sourcesContent":["body {\r\n  padding: 10px;\r\n  font-family: sans-serif;\r\n}\r\n"]}
